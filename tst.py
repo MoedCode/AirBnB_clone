@@ -24,3 +24,4 @@ command.cmdloop()
 #     print(f"cmd module: \n {dir(Cmd)}")
 #     print(f"cmd class:\n {dir(CommandLine)}")
 #     print(f"inst of cmd class:\n {dir(inst1)}")
+# ss
