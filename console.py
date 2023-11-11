@@ -5,11 +5,14 @@
     facilitating tasks such as creating, updating, deleting, and retrieving data. Additionally, the console functions as a testing and validation tool for the project's storage engine, ensuring effective abstraction of data storage and retrieval.
 """
 import cmd
+from models.base_model import BaseModel
+from uuid import uuid4
 
 
 class HBNBCommand(cmd.Cmd):
     """ A commandline interpreter class"""
     prompt = "(hbnb) "
+    classes_dict = {"BaseModel": BaseModel}
 
     def do_quit(self, arg):
         """Quit command to exit the program \n"""
@@ -24,6 +27,19 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """Called when an empty line is entered."""
         print(end="")
+
+    def do_create(self, arg):
+        if (arg):
+            if (arg not in HBNBCommand.classes_dict):
+                print("** class name missing **")
+            else:
+                for Key, value in HBNBCommand.classes_dict.items():
+                    if (Key == arg):
+                        my_model = value()
+                        my_model.save()
+                        print(my_model.id)
+        else:
+            print("** class name missing **")
 
 
 if __name__ == '__main__':
