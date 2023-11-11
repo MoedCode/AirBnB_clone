@@ -16,15 +16,17 @@ class FileStorage:
 
     def new(self, obj):
         # sets in __objects the obj with key <obj class name>.id
-        self.__objects = obj
+        # self.__objects = obj
+        self.__objects[obj.__class__.__name__ + "." + obj.id] = obj
 
     def save(self):
         # serializes __objects to the JSON file (path: __file_path)
-        json.dump(self.__objects, self.__file_path)
+        with open(self.__file_path, "w") as file:
+            json.dump(self.__objects, file)
 
     def reload(self):
         # deserializes the JSON file to __objects (only if the JSON file (__file_path) exists ;
         # otherwise, do nothing. If the file doesn’t exist, no exception should be raised)
-        if os.path.exists(self.__file_path):
-            with open(self.__file_path) as file:
+        if os.path.exists(self.__file_path) and os.stat(self.__file_path).st_size > 0:
+            with open(self.__file_path, "r") as file:
                 self.__objects = json.load(file)

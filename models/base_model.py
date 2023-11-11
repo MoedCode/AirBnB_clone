@@ -2,7 +2,10 @@
 """ doc"""
 import uuid
 from datetime import datetime
+
 from __init__ import storage
+
+# import models
 
 
 class BaseModel:
@@ -46,23 +49,36 @@ class BaseModel:
         dict: A dictionary containing all keys/values of the instance.
             Includes '__class__', 'created_at', and 'updated_at' keys.
         """
-        # class_attr = self.__dict__
-        # filtered_class_attr = dict()
+        class_attr = self.__dict__
+        filtered_class_attr = dict()
 
-        # for key in class_attr:
-        #     filtered_class_attr[key] = class_attr[key]
+        for key in class_attr:
+            filtered_class_attr[key] = class_attr[key]
 
-        # filtered_class_attr["__class__"] = self.__class__.__name__
+        filtered_class_attr["__class__"] = self.__class__.__name__
 
-        # filtered_class_attr["updated_at"]: str = str(self.updated_at.isoformat())
-        # filtered_class_attr["created_at"]: str = str(self.created_at.isoformat())
+        filtered_class_attr["updated_at"]: str = str(self.updated_at.isoformat())
+        filtered_class_attr["created_at"]: str = str(self.created_at.isoformat())
 
-        # return filtered_class_attr
-        map_objects = {}
-        for key, value in self.__dict__.items():
-            if key == "created_at" or key == "updated_at":
-                map_objects[key] = value.isoformat()
-            else:
-                map_objects[key] = value
-        map_objects["__class__"] = self.__class__.__name__
-        return map_objects
+        return filtered_class_attr
+        # map_objects = {}
+        # for key, value in self.__dict__.items():
+        #     if key == "created_at" or key == "updated_at":
+        #         map_objects[key] = value.isoformat()
+        #     else:
+        #         map_objects[key] = value
+        # map_objects["__class__"] = self.__class__.__name__
+        # return map_objects
+
+
+my_model = BaseModel()
+my_model.name = "My First Model"
+my_model.my_number = 89
+print(my_model)
+# my_model.save()
+print(my_model)
+my_model_json = my_model.to_dict()
+print(my_model_json)
+print("JSON of my_model:")
+for key in my_model_json.keys():
+    print("\t{}: ({}) - {}".format(key, type(my_model_json[key]), my_model_json[key]))
