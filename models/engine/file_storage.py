@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 import json
 import os.path
+from models.base_model import BaseModel
 
 
 class FileStorage:
     __file_path: str = "file.json"
     __objects: dict = {}
+    __classes: dict = {"BaseModel": BaseModel}
 
     def __init__(self):
         pass
