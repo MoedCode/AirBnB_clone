@@ -41,8 +41,6 @@ class FileStorage:
         try:
             with open(self.__file_path, "r") as file:
                 dictionary = json.loads(file.read())
-                print("*****\\\\{}/////****\n\n\n\n".format(dictionary))
-
                 for value in dictionary.values():
                     cls = value["__class__"]
                     self.new(eval(cls)(**value))
