@@ -38,7 +38,7 @@ class BaseModel:
 
     def save(self):
         """Update the 'updated_at' attribute with the current datetime."""
-        self.updated_at = datetime.now()
+        self.updated_at = datetime.utcnow()
         storage.save()
 
     def to_dict(self):
@@ -75,6 +75,7 @@ my_model = BaseModel()
 my_model.name = "My First Model"
 my_model.my_number = 89
 print(my_model)
+print("----------------\\n")
 my_model.save()
 print(my_model)
 my_model_json = my_model.to_dict()

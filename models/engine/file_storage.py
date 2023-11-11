@@ -21,8 +21,13 @@ class FileStorage:
 
     def save(self):
         # serializes __objects to the JSON file (path: __file_path)
+
         with open(self.__file_path, "w") as file:
-            json.dump(self.__objects, file)
+            serialized_objects = {}
+            for key, value in self.__objects.items():
+                serialized_objects[key] = value.to_dict()
+
+            json.dump(serialized_objects, file)
 
     def reload(self):
         # deserializes the JSON file to __objects (only if the JSON file (__file_path) exists ;
