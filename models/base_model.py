@@ -46,15 +46,11 @@ class BaseModel:
         dict: A dictionary containing all keys/values of the instance.
             Includes '__class__', 'created_at', and 'updated_at' keys.
         """
-        class_attr = self.__dict__
-        filtered_class_attr = dict()
-
-        for key in class_attr:
-            filtered_class_attr[key] = class_attr[key]
-
-        filtered_class_attr["__class__"] = self.__class__.__name__
-
-        filtered_class_attr["updated_at"]: str = str(self.updated_at.isoformat())
-        filtered_class_attr["created_at"]: str = str(self.created_at.isoformat())
-
-        return filtered_class_attr
+        map_objects = {}
+        for key, value in self.__dict__.items():
+            if key == "created_at" or key == "updated_at":
+                map_objects[key] = value.isoformat()
+            else:
+                map_objects[key] = value
+        map_objects["__class__"] = self.__class__.__name__
+        return map_objects
