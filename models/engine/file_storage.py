@@ -38,7 +38,7 @@ class FileStorage:
 
             json.dump(serialized_objects, file)
 
-    def reload3(self):
+    def reload(self):
         """doc"""
         # deserializes the JSON file to __objects (only if the JSON file (__file_path) exists ;
         # otherwise, do nothing. If the file doesn’t exist, no exception should be raised)
@@ -57,7 +57,7 @@ class FileStorage:
                     instance = current_class(**obj_dict)
                     FileStorage.__objects[key] = instance
 
-    def reload(self):
+    def reload3(self):
         """doc"""
         try:
             with open(self.__file_path, "r") as file:
