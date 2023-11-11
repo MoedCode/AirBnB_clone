@@ -29,10 +29,22 @@ class FileStorage:
 
             json.dump(serialized_objects, file)
 
-    def reload(self):
+    def reload2(self):
         # deserializes the JSON file to __objects (only if the JSON file (__file_path) exists ;
         # otherwise, do nothing. If the file doesn’t exist, no exception should be raised)
 
-        if os.path.exists(self.__file_path):
+        if os.path.exists(self.__file_path) and os.stat(self.__file_path).st_size > 0:
             with open(self.__file_path, "r") as file:
                 self.__objects = json.load(file)
+
+    def reload(self):
+        try:
+            with open(self.__file_path, "r") as file:
+                dictionary = json.loads(file.read())
+                print("*****\\\\{}/////****\n\n\n\n".format(dictionary))
+
+                for value in dictionary.values():
+                    cls = value["__class__"]
+                    self.new(eval(cls)(**value))
+        except Exception:
+            pass
