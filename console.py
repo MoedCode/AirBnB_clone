@@ -7,7 +7,7 @@
 import cmd
 
 
-class CommandInterpreter(cmd.Cmd):
+class HBNBCommand(cmd.Cmd):
     """ A commandline interpreter class"""
 
     def do_quit(self, arg):
@@ -16,5 +16,5 @@ class CommandInterpreter(cmd.Cmd):
     do_EOF = do_quit
 
 
-cmd = CommandInterpreter()
+cmd = HBNBCommand()
 cmd.cmdloop()
