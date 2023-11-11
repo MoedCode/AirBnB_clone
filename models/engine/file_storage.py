@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 import json
 import os.path
+from models.base_model import BaseModel
 
 
 class FileStorage:
     __file_path: str = "file.json"
     __objects: dict = {}
+    __classes: dict = {"BaseModel": BaseModel}
 
     def __init__(self):
         """doc"""
@@ -13,11 +15,13 @@ class FileStorage:
 
     def all(self):
         """doc"""
+
         # returns the dictionary __objects
         return self.__objects
 
     def new(self, obj):
         """doc"""
+
         # sets in __objects the obj with key <obj class name>.id
         # self.__objects = obj
         self.__objects[obj.__class__.__name__ + "." + obj.id] = obj
@@ -43,14 +47,15 @@ class FileStorage:
         #     with open(self.__file_path, "r") as file:
         #         self.__objects = json.load(file)
         with open(self.__file_path, "r") as file:
-            loaded_data = json.loads(file.read())
-            for k, obj_dict in loaded_data.items():
+            loaded_data: dict = json.loads(file.read())
+
+            for key, obj_dict in loaded_data.items():
                 class_name = obj_dict.get("__class__")
 
                 if class_name in FileStorage.__classes:
-                    current_class = FileStorage.__classes[class_name]
+                    current_class: FileStorage = FileStorage.__classes[class_name]
                     instance = current_class(**obj_dict)
-                    FileStorage.__objects[k] = instance
+                    FileStorage.__objects[key] = instance
 
     def reload(self):
         """doc"""
