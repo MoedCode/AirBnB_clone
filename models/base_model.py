@@ -2,8 +2,9 @@
 """ doc"""
 import uuid
 from datetime import datetime
-from models.__init__ import storage
 
+# from models.__init__ import storage
+import models
 
 
 class BaseModel:
@@ -28,7 +29,7 @@ class BaseModel:
             self.my_number = None
             self.updated_at: datetime = datetime.utcnow()
 
-            storage.new(self)
+            models.storage.new(self)
 
     def __str__(self):
         """Return a string representation of the BaseModel instance."""
@@ -37,7 +38,7 @@ class BaseModel:
     def save(self):
         """Update the 'updated_at' attribute with the current datetime."""
         self.updated_at = datetime.utcnow()
-        storage.save()
+        models.storage.save()
 
     def to_dict(self):
         """

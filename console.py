@@ -8,11 +8,12 @@ import cmd
 
 
 class HBNBCommand(cmd.Cmd):
-    """A commandline interpreter class"""
+    """ A commandline interpreter class"""
     prompt = "(hbnb) "
 
     def do_quit(self, arg):
-        """Quit the program."""
+        """Quit command to exit the program \n"""
+
         return True
 
     def do_EOF(self, arg):
@@ -22,8 +23,9 @@ class HBNBCommand(cmd.Cmd):
 
     def emptyline(self):
         """Called when an empty line is entered."""
-        # print("An empty line doesn't execute anything.")
+        print(end="")
 
 
 if __name__ == '__main__':
+
     HBNBCommand().cmdloop()
