@@ -7,9 +7,6 @@ class FileStorage:
     __file_path: str = "file.json"
     __objects: dict = {}
 
-    def __init__(self):
-        pass
-
     def all(self):
         # returns the dictionary __objects
         return self.__objects
@@ -42,7 +39,7 @@ class FileStorage:
             with open(self.__file_path, "r") as file:
                 dictionary = json.loads(file.read())
                 for value in dictionary.values():
-                    cls = value["__class__"]
-                    self.new(eval(cls)(**value))
+                    cls_name = value["__class__"]
+                    self.new(eval(cls_name)(**value))
         except Exception:
             pass
