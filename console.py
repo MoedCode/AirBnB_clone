@@ -11,19 +11,17 @@ class HBNBCommand(cmd.Cmd):
     """ A commandline interpreter class"""
     prompt = "(hbnb) "
 
-    def do_quit(self, arg):
-        """Quit command to exit the program \n"""
-
-        return True
-
-    def do_EOF(self, arg):
-        """Exit the program when EOF is encountered (Ctrl+D)."""
-        print()  # Add a newline before exiting
-        return True
-
     def emptyline(self):
-        """Called when an empty line is entered."""
-        print(end="")
+        """override the method and shouldn't execute any thing"""
+        pass
+
+    def do_quit(self, arg):
+        """Quit command to exit the program"""
+        return True
+
+    def do_EOF(self, line):
+        """Quit command to exit the program"""
+        return True
 
 
 if __name__ == '__main__':
