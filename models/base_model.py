@@ -11,8 +11,6 @@ class BaseModel:
             self.id = kwargs["id"]
             self.name = kwargs["name"]
             self.my_number = kwargs["my_number"]
-            self.__class__.__name__ = kwargs["__class__"]
-
             self.created_at: datetime = datetime.strptime(
                 kwargs["created_at"], "%Y-%m-%dT%H:%M:%S.%f"
             )
@@ -74,7 +72,7 @@ if __name__ == "__main__":
             "\t{}: ({}) - {}".format(key, type(my_model_json[key]), my_model_json[key])
         )
 
-    print("--")
+    print("-- my new model :")
     my_new_model = BaseModel(**my_model_json)
     print(my_new_model.id)
     print(my_new_model)
