@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
+""" doc"""
 import uuid
 from datetime import datetime
+from __init__ import storage
 
 
 class BaseModel:
@@ -26,6 +27,8 @@ class BaseModel:
             self.my_number = None
             self.updated_at: datetime = datetime.now()
 
+            storage.new(self)
+
     def __str__(self):
         """Return a string representation of the BaseModel instance."""
         return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
@@ -33,6 +36,7 @@ class BaseModel:
     def save(self):
         """Update the 'updated_at' attribute with the current datetime."""
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         """
