@@ -50,8 +50,8 @@ class BaseModel:
         filtered_class_attr = dict()
 
         for key in class_attr:
-            if class_attr[key] is not None:
-                filtered_class_attr[key] = class_attr[key]
+            filtered_class_attr[key] = class_attr[key]
+
         filtered_class_attr["__class__"] = self.__class__.__name__
 
         filtered_class_attr["updated_at"]: str = str(self.updated_at.isoformat())
