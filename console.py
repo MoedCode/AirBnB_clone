@@ -9,12 +9,15 @@ import cmd
 
 class HBNBCommand(cmd.Cmd):
     """ A commandline interpreter class"""
+    prompt = "(hbnb)"
 
     def do_quit(self, arg):
         """Quit the program."""
+
         return True
     do_EOF = do_quit
 
 
-cmd = HBNBCommand()
-cmd.cmdloop()
+if __name__ == '__main__':
+
+    HBNBCommand().cmdloop()
