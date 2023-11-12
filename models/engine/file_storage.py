@@ -32,15 +32,13 @@ class FileStorage:
             json.dump(serialized_objects, file)
 
     def reload(self):
-        try:
-            with open(self.__file_path, "r") as file:
-                dictionary: dict = json.load(file)
-                for key, value in dictionary.items():
-                    cls_name = value["__class__"]
-                    obj = eval(cls_name)(**value)
-                    self.__objects[key] = obj
-        except Exception:
-            pass
+        with open(self.__file_path, "r") as file:
+            dictionary: dict = json.load(file)
+            for key, value in dictionary.items():
+                cls_name = value["__class__"]
+                obj = eval(cls_name)(**value)
+                self.__objects[key] = obj
+                print(key)
 
     # def reload(self):
     #     """doc"""

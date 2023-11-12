@@ -12,8 +12,8 @@ class BaseModel:
         """Initialize a new instance of the BaseModel class."""
         if kwargs:
             self.id = kwargs["id"]
-            self.name = kwargs["name"]
-            self.my_number = kwargs["my_number"]
+            # self.name = kwargs["name"]
+            # self.my_number = kwargs["my_number"]
             self.created_at: datetime = datetime.strptime(
                 kwargs["created_at"], "%Y-%m-%dT%H:%M:%S.%f"
             )
