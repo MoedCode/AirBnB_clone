@@ -38,7 +38,6 @@ class FileStorage:
                 cls_name = value["__class__"]
                 obj = eval(cls_name)(**value)
                 self.__objects[key] = obj
-                print(key)
 
     # def reload(self):
     #     """doc"""
