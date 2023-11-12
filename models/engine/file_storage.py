@@ -35,9 +35,10 @@ class FileStorage:
         try:
             with open(self.__file_path, "r") as file:
                 dictionary: dict = json.load(file)
-                for value in dictionary.values():
+                for key, value in dictionary.items():
                     cls_name = value["__class__"]
-                    self.new(eval(cls_name)(**value))
+                    obj = eval(cls_name)(**value)
+                    self.__objects[key] = obj
         except Exception:
             pass
 
