@@ -34,7 +34,7 @@ class FileStorage:
     def reload(self):
         try:
             with open(self.__file_path, "r") as file:
-                dictionary = json.loads(file.read())
+                dictionary = json.load(file)
                 for value in dictionary.values():
                     cls_name = value["__class__"]
                     self.new(eval(cls_name)(**value))
