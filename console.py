@@ -8,6 +8,9 @@ import cmd
 from models.base_model import BaseModel
 from uuid import uuid4
 from models.user import User
+from models import storage
+
+""""""
 
 
 class HBNBCommand(cmd.Cmd):
