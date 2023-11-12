@@ -40,7 +40,7 @@ class FileStorage:
                     obj = eval(cls_name)(**value)
                     self.__objects[key] = obj
         except:
-            FileNotFoundError("")
+            FileNotFoundError("file not found")
 
     # def reload(self):
     #     """doc"""
