@@ -37,21 +37,21 @@ class HBNBCommand(cmd.Cmd):
         """Called when an empty line is entered."""
         print(end="")
 
-        def precmd(self, line):
-            """tokenize the command line argument before start the  execution"""
-            if line is None:
-                return False
-            if "." in line and "(" in line and ")" in line:
-                tok_line = line.split(".")
-                class_name = tok_line[0]
-                tok2 = tok_line[1].split("(")
-                command = tok2[0]
-                tok3 = tok2[1].split(")")
-                obj_id = tok3[0]
-                command_line = command + " " + class_name + " " + obj_id
-                return command_line
-            else:
-                return line
+    def do_precmd(self, line):
+        """tokenize the command line argument before start the  execution"""
+        if line is None:
+            return False
+        if "." in line and "(" in line and ")" in line:
+            tok_line = line.split(".")
+            class_name = tok_line[0]
+            tok2 = tok_line[1].split("(")
+            command = tok2[0]
+            tok3 = tok2[1].split(")")
+            obj_id = tok3[0]
+            command_line = command + " " + class_name + " " + obj_id
+            return command_line
+        else:
+            return line
 
     def default(self, line):
         """default function"""
@@ -74,25 +74,25 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** class name missing **")
 
-        def do_all(self, arg):
-            """Prints all string representation of all
-            instances based or not on the class name."""
-            listof_alldict = []
+    def do_all(self, arg):
+        """Prints all string representation of all
+        instances based or not on the class name."""
+        listof_alldict = []
 
-            if (arg):
-                if (arg in HBNBCommand.classes_dict):
-                    for key, value in storage.all().items():
-                        classes = key.split(".")[0]
-                        if (classes == arg):
-                            listof_alldict += [str(value)]
-                else:
-                    print("** class doesn't exist **")
-                    return
-
+        if (arg):
+            if (arg in HBNBCommand.classes_dict):
+                for key, value in storage.all().items():
+                    classes = key.split(".")[0]
+                    if (classes == arg):
+                        listof_alldict += [str(value)]
             else:
-                for k, v in storage.all().items():
-                    listof_alldict.append(str(v))
-            print(listof_alldict)
+                print("** class doesn't exist **")
+                return
+
+        else:
+            for k, v in storage.all().items():
+                listof_alldict.append(str(v))
+        print(listof_alldict)
 
     def do_show(self, args):
         """Print a string representation of an class instance to terminal
