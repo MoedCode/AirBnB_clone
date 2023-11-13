@@ -19,7 +19,9 @@ from models import storage
 class HBNBCommand(cmd.Cmd):
     """ A commandline interpreter class"""
     prompt = "(hbnb) "
-    classes_dict = {"BaseModel": BaseModel}
+    classes_dict = {"BaseModel": BaseModel, "User": User, "City": City,
+                    "Place": Place, "Amenity": Amenity, "Review": Review,
+                    "State": State}
 
     def do_quit(self, arg):
         """Quit command to exit the program \n"""
@@ -34,6 +36,30 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """Called when an empty line is entered."""
         print(end="")
+
+        def precmd(self, line):
+            """tokenize the command line argument before start the  execution"""
+            if line is None:
+                return False
+            if "." in line and "(" in line and ")" in line:
+                tok_line = line.split(".")
+                class_name = tok_line[0]
+                tok2 = tok_line[1].split("(")
+                command = tok2[0]
+                tok3 = tok2[1].split(")")
+                obj_id = tok3[0]
+                command_line = command + " " + class_name + " " + obj_id
+                return command_line
+            else:
+                return line
+
+    def default(self, line):
+        """default function"""
+        return cmd.Cmd.default(self, line)
+
+    def postcmd(self, stop, line):
+        """documentation"""
+        return stop
 
     def do_create(self, arg):
         if (arg):
@@ -108,6 +134,16 @@ class HBNBCommand(cmd.Cmd):
                 storage.save()
         else:
             print("** class name missing **")
+
+    def do_count(self, arg):
+        """ retrieve the number of instances of a class"""
+        count = 0
+        if (arg in HBNBCommand.classes):
+            for key, value in storage.all().items():
+                cls_name = key.split(".")[0]
+                if (cls_name == arg):
+                    count += 1
+        print(count)
 
 
 if __name__ == '__main__':
