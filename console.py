@@ -74,6 +74,26 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** class name missing **")
 
+        def do_all(self, arg):
+            """Prints all string representation of all
+            instances based or not on the class name."""
+            listof_alldict = []
+
+            if (arg):
+                if (arg in HBNBCommand.classes_dict):
+                    for key, value in storage.all().items():
+                        classes = key.split(".")[0]
+                        if (classes == arg):
+                            listof_alldict += [str(value)]
+                else:
+                    print("** class doesn't exist **")
+                    return
+
+            else:
+                for k, v in storage.all().items():
+                    listof_alldict.append(str(v))
+            print(listof_alldict)
+
     def do_show(self, args):
         """Print a string representation of an class instance to terminal
                 accepts   class name and id as arguments """
@@ -140,8 +160,8 @@ class HBNBCommand(cmd.Cmd):
         count = 0
         if (arg in HBNBCommand.classes):
             for key, value in storage.all().items():
-                cls_name = key.split(".")[0]
-                if (cls_name == arg):
+                classes = key.split(".")[0]
+                if (classes == arg):
                     count += 1
         print(count)
 
