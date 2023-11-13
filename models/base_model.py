@@ -56,8 +56,10 @@ class BaseModel:
 
         filtered_class_attr["__class__"] = self.__class__.__name__
 
-        filtered_class_attr["updated_at"]: str = str(self.updated_at.isoformat())
-        filtered_class_attr["created_at"]: str = str(self.created_at.isoformat())
+        filtered_class_attr["updated_at"]: str = str(
+            self.updated_at.isoformat())
+        filtered_class_attr["created_at"]: str = str(
+            self.created_at.isoformat())
 
         return filtered_class_attr
         # map_objects = {}
