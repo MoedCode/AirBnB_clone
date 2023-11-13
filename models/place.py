@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"doc"
+"places class doc"
 from models.base_model import BaseModel
 
 
 class Place(BaseModel):
+    """ places class"""
     city_id: str = ""
     user_id: str = ""
     name: str = ""
