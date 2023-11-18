@@ -1,0 +1,14 @@
+body
+{
+    /*Element Dimensions */
+    margin: 0; padding: 0;
+    /*Font*/
+    color: #484848; font-family:Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+/* margin: top right bottom left; */
+.container
+{
+    /*Element Dimensions && position */
+    max-width: 1000px; margin:30px auto;
+}

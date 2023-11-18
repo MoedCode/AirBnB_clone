@@ -1,0 +1,27 @@
+.filters
+{
+	/*Element Dimensions */
+	width: 100%; height: 70px;
+	/*outlines*/
+	border: 1px solid #DDDDDD;
+	border-radius: 4px;
+
+}
+/*margin: top right bottom left;*/
+.filters button
+{
+	/* positioning*/
+	float: right;
+	margin-top: 11px;
+	margin-bottom: 11px;
+	margin-right: 30px;
+
+	/*Element Dimensions */
+	width: 20%; height: 48px;
+
+	/*outlines*/
+	border-style: none; border-radius: 4px;
+
+	/* background*/
+	background-color: #FF5A5F;
+}

@@ -1,0 +1,14 @@
+header
+{
+    /*Element Dimensions */
+    width: 100%; height: 70%;
+    /*outline*/
+    border-bottom: 1px   solid #cccccc;
+}
+header img
+{
+    /*Element Dimensions */
+    width:10%;
+    /*Font*/
+}
+
