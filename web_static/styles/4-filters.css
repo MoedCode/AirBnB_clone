@@ -25,3 +25,8 @@
 	/* background*/
 	background-color: #FF5A5F;
 }
+.filters button:hover
+{
+	opacity: 70%;
+
+}
