@@ -122,3 +122,8 @@ ul
 .popover li {
     padding-left: 10px; /* Adjust the indentation as needed */
 }
+.popover li
+{
+	margin-left: 5%;
+
+}
