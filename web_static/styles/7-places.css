@@ -1,0 +1,63 @@
+.places
+
+{
+    /* positioning*/
+    display: block;
+    margin:45px auto;
+    /*Dimensions */
+    /* content */
+    font-size: 30px;
+    /* text-align: center; */
+}
+article
+{
+    /* positioning*/
+    display: inline-block; margin:20px;
+
+    /*Dimensions */
+    width: 390px;
+
+    /*outlines*/
+    border: 1px solid #FF5A5F;
+    border-radius: 4px;
+
+    /* inside */
+    padding: 20px;
+    /* content */
+    font-size: 30px;
+    text-align: center;
+}
+.places h1
+{
+    /* positioning*/
+    /* display: block; */
+    /* float: left; */
+    margin-top: 0px; margin-bottom: 5px; margin-left: 20px;
+
+    /*Dimensions */
+    width: 95%;
+
+    /*outlines*/
+    /* inside */
+    /* content */
+    font-size: 30px;
+
+}
+article h2
+{
+    /* positioning*/
+    margin: auto;
+    /*Dimensions */
+    /*outlines*/
+    /* inside */
+    padding: 0;
+    /* content */
+    font-size: 25px;
+}
+.places :nth-child(4)
+{
+    margin-left: 25%;
+
+    border-top: 1px solid #edcbcc;
+    border-bottom: 1px solid #edcbcc;
+}
