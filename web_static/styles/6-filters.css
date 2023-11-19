@@ -109,21 +109,20 @@ h2 {
 }
 
 
-ul
+.popover ul
 {
 	list-style-type: none;
 	padding: 0px;
 	padding-bottom: 20px;
-}
-.popover ul {
     padding-left: 20px; /* Adjust the indentation as needed */
+
 }
 
-.popover li {
-    padding-left: 10px; /* Adjust the indentation as needed */
-}
+
 .popover li
 {
 	margin-left: 5%;
+    padding-left: 10px; /* Adjust the indentation as needed */
+
 
 }
