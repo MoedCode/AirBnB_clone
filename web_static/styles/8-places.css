@@ -13,6 +13,21 @@ h1 {
 	text-align: left;
 	font-size: 30px;
 }
+.headline
+{
+	 /* positioning */
+	 position: relative;
+
+	/* Dimensions*/
+	height: 80px;
+	width: 100%;
+
+	/* content */
+	display: flex;
+	flex-direction: row;
+}
+
+			/* PLACES */
 
 .places
 {
@@ -27,46 +42,8 @@ h1 {
 
 }
 
-article
-{
-	/* positioning */
-	margin: 20px;
 
-	/* Dimensions*/
-	width: 390px;
 
-	 /* outlines */
-	border: 1px solid #FF5A5F;
-	border-radius: 4px;
-
-	/* inside*/
-	padding-top: 10px;
-	padding-right: 20px;
-	padding-left: 20px;
-	padding-bottom: 20px;
-
-	/* content */
-	display: flex;
-	flex: none;
-	flex-wrap: wrap;
-	flex-direction: row;
-	align-content: flex-start;
-
-}
-
-.headline
-{
-	 /* positioning */
-	 position: relative;
-
-	/* Dimensions*/
-	height: 80px;
-	width: 100%;
-
-	/* content */
-	display: flex;
-	flex-direction: row;
-}
 
 .price_by_night
 {
@@ -140,6 +117,34 @@ article
 	text-align: left;
 }
 
+
+					/* ARTICLE */
+article
+{
+	/* positioning */
+	margin: 20px;
+
+	/* Dimensions*/
+	width: 390px;
+
+	 /* outlines */
+	border: 1px solid #FF5A5F;
+	border-radius: 4px;
+
+	/* inside*/
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+
+	/* content */
+	display: flex;
+	flex: none;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-content: flex-start;
+
+}
 article h2 {
 	font-size: 30px;
 	margin: 10px auto;
