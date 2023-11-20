@@ -1,9 +1,25 @@
+				/*HEAD_LINES*/
+h1 {
+	/* positioning */
+	display: block;
+	margin-top: 0px;
+	margin-left: 20px;
+	margin-bottom: 5px;
 
-.places {
-    /* positioning*/
-    text-align: center;
+	/* Dimensions*/
+	width: 95%;
 
-    /* content*/
+	/* content */
+	text-align: left;
+	font-size: 30px;
+}
+
+.places
+{
+	/* positioning*/
+	text-align: center;
+
+	/* content*/
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -11,24 +27,25 @@
 
 }
 
-article {
-    /* positioning */
-    margin: 20px;
+article
+{
+	/* positioning */
+	margin: 20px;
 
-    /* Dimensions*/
+	/* Dimensions*/
 	width: 390px;
 
-     /* outlines */
+	 /* outlines */
 	border: 1px solid #FF5A5F;
 	border-radius: 4px;
 
-    /* inside*/
-    padding-top: 10px;
+	/* inside*/
+	padding-top: 10px;
 	padding-right: 20px;
 	padding-left: 20px;
 	padding-bottom: 20px;
 
-    /* content */
+	/* content */
 	display: flex;
 	flex: none;
 	flex-wrap: wrap;
@@ -37,38 +54,40 @@ article {
 
 }
 
-.headline {
-     /* positioning */
-     position: relative;
+.headline
+{
+	 /* positioning */
+	 position: relative;
 
-    /* Dimensions*/
-    height: 80px;
+	/* Dimensions*/
+	height: 80px;
 	width: 100%;
 
-    /* content */
-    display: flex;
+	/* content */
+	display: flex;
 	flex-direction: row;
 }
 
-.price_by_night {
-    /* positioning */
-    position: absolute;
-    float: right;
+.price_by_night
+{
+	/* positioning */
+	position: absolute;
+	float: right;
 	right: 0;
 
-    /* Dimensions*/
-    min-width: 60px;
+	/* Dimensions*/
+	min-width: 60px;
 	height: 60px;
 
-     /* outlines */
-     line-height: 60px;
-     border: 4px solid #FF5A5F;
-     border-radius: 100%;
+	 /* outlines */
+	 line-height: 60px;
+	 border: 4px solid #FF5A5F;
+	 border-radius: 100%;
 
-    /* inside*/
+	/* inside*/
 	padding: 5px;
 
-    /* content */
+	/* content */
 	display: flex;
 	justify-content: center;
 	align-self: flex-end;
@@ -76,44 +95,49 @@ article {
 	font-size: 30px;
 }
 
-.information {
+.information
+{
+	/* positioning */
 	display: block;
-	height: 80px;
-	width: 100%;
-	border-top: 1px solid #DDDDDD;
-	border-bottom: 1px solid #DDDDDD;
-
-	padding-top: 5px;
-	padding-bottom: 12px;
 	margin-top: 10px;
 	margin-bottom: 20px;
+
+	/* Dimensions*/
+	height: 80px;
+	width: 100%;
+
+	 /* outlines */
+	 border-top: 1px solid #DDDDDD;
+	 border-bottom: 1px solid #DDDDDD;
+
+	/* inside*/
+	padding-top: 5px;
+	padding-bottom: 12px;
 }
 
-.max_guest, .number_rooms, .number_bathrooms {
+.max_guest, .number_rooms, .number_bathrooms
+{
+	/* positioning */
 	display: inline-block;
-	width: 100px;
-	text-align: center;
 	margin: 0px auto;
+	/* Dimensions*/
+	width: 100px;
+
+	/* content */
+	text-align: center;
 }
 
-.user {
+.user
+{
+	/* positioning */
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
 
-.description {
+.description
+{
+	/* content */
 	text-align: left;
-}
-
-h1 {
-	display: block;
-	text-align: left;
-	width: 95%;
-	display: block;
-	margin-top: 0px;
-	margin-left: 20px;
-	margin-bottom: 5px;
-	font-size: 30px;
 }
 
 article h2 {
@@ -122,13 +146,13 @@ article h2 {
 	padding: 0px;
 }
 
-            /* ICONS_STYLE */
+			/* ICONS_STYLE */
 .guest_icon {
-    /*positioning*/
-    display: inline-block;
-    /* Dimensions  */
-    width: 50px; height: 50px;
-    /*background*/
+	/*positioning*/
+	display: inline-block;
+	/* Dimensions  */
+	width: 50px; height: 50px;
+	/*background*/
 	background-image: url("/images/icon_group.png");
 	background-repeat: no-repeat;
 	background-position: center;
@@ -136,11 +160,11 @@ article h2 {
 }
 
 .bed_icon {
-    /*positioning*/
-    display: inline-block;
-    /* Dimensions  */
-    width: 50px; height: 50px;
-    /*background*/
+	/*positioning*/
+	display: inline-block;
+	/* Dimensions  */
+	width: 50px; height: 50px;
+	/*background*/
 	background-image: url("/images/icon_bed.png");
 	background-repeat: no-repeat;
 	background-position: center;
@@ -148,11 +172,11 @@ article h2 {
 }
 
 .bath_icon {
-    /*positioning*/
-    display: inline-block;
-    /* Dimensions  */
-    width: 50px; height: 50px;
-    /*background*/
+	/*positioning*/
+	display: inline-block;
+	/* Dimensions  */
+	width: 50px; height: 50px;
+	/*background*/
 	background-image:url("/images/icon_bath.png");
 	background-repeat: no-repeat;
 	background-position: center;
